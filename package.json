@@ -2,8 +2,11 @@
   "name": "mini-search-engine",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
   "scripts": {
+    "crawl": "node src/crawler/crawler.js",
+    "index": "node src/index/indexer.js",
+    "search": "node src/search/search.js",
+    "test:server": "node tests/server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
