@@ -1,4 +1,4 @@
-const parsePage = require("./parse-page");
+const parsePage = require("./parser");
 
 // Read the URL supplied after the script name.
 
@@ -49,7 +49,7 @@ if (require.main === module) {
     const url = process.argv[2];
 
     if (!url || !url.trim()) {
-        console.error('Usage: node src/fetch-page.js "https://example.com"');
+        console.error('Usage: node src/crawler/fetch-page.js "https://example.com"');
         process.exit(1);
     }
     main(url);

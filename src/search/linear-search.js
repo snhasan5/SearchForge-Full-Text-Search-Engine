@@ -1,4 +1,4 @@
-const documents = require('../data/document.json');
+const documents = require('../../data/raw/document.json');
 
 const query = process.argv[2];
 

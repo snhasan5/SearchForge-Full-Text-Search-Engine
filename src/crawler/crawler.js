@@ -1,6 +1,6 @@
 const fs = require('fs/promises');
 const { fetchPage } = require('./fetch-page')
-const parsePage = require('./parse-page')
+const parsePage = require('./parser')
 const { setTimeout } = require('node:timers/promises');
 const robotsParser = require('robots-parser');
 const path = require('path');
@@ -30,7 +30,7 @@ if (ATTEMPTS > 100) {
 
     async function updateDocument(document) {
         const data = JSON.stringify(document);
-        const filePath = path.join(__dirname,'../data/crawled-documents.json');
+        const filePath = path.join(__dirname,'../../data/raw/crawled-documents.json');
         await fs.writeFile(filePath, data);
         console.log("The document has been updated!");
     }
