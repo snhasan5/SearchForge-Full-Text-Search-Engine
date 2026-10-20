@@ -3,18 +3,25 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
+    "start": "node src/api/server.js",
+    "test:phase-f": "node --test tests/phase-f.test.js",
+    "index:advanced": "node src/index/buildAdvancedIndex.js",
+    "search:advanced": "node src/search/advanced-search.js",
+    "test:phase-e": "node --test tests/phase-e.test.js",
     "crawl": "node src/crawler/crawler.js",
     "index": "node src/index/indexer.js",
     "search": "node src/search/search.js",
     "test:server": "node tests/server.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node --test tests/phase-e.test.js tests/phase-f.test.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "type": "commonjs",
   "dependencies": {
+    "@stdlib/nlp-porter-stemmer": "^0.2.3",
     "cheerio": "^1.2.0",
+    "express": "^5.3.0",
     "robots-parser": "^3.0.1"
   }
 }

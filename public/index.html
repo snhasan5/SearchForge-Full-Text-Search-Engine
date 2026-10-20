@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>MySearch</title>
+    <link rel="stylesheet" href="/style.css">
+    <script src="/app.js" defer></script>
+</head>
+<body>
+    <main>
+        <header><span class="eyebrow">A SMALL SEARCH ENGINE</span><h1>MySearch<span>.</span></h1>
+            <p>Find a title, follow an idea.</p></header>
+        <form id="search-form" role="search">
+            <label for="query">Search your documents</label>
+            <div class="search-bar">
+                <input id="query" name="q" type="search" maxlength="300" autocomplete="off"
+                    placeholder="Try poetry or travel" list="completions" required>
+                <datalist id="completions"></datalist>
+                <button type="submit">Search</button>
+            </div>
+            <p class="help">Use “quoted phrases”, AND, OR, NOT, or a prefix like <code>trav*</code>.</p>
+        </form>
+        <div class="examples" aria-label="Example searches">
+            <button type="button" data-query="poetry">Poetry</button>
+            <button type="button" data-query="travel">Travel</button>
+            <button type="button" data-query='"tipping the velvet"'>A phrase</button>
+        </div>
+        <p id="status" role="status" aria-live="polite">Search the documents you’ve collected.</p>
+        <div id="corrections"></div>
+        <section id="results" aria-label="Search results" aria-busy="false"></section>
+        <nav id="pagination" aria-label="Result pages" hidden>
+            <button id="previous" type="button">← Previous</button>
+            <span id="page-label"></span>
+            <button id="next" type="button">Next →</button>
+        </nav>
+        <dialog id="document-dialog">
+            <button id="close-document" type="button">Close</button>
+            <h2 id="document-title"></h2><p id="document-content"></p>
+        </dialog>
+        <footer>Built to learn how search works · Ranked with BM25</footer>
+    </main>
+</body>
+</html>
